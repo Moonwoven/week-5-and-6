@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class LargestNumberInArray {
+public class SumAndAverageOfArray {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -14,21 +14,18 @@ public class LargestNumberInArray {
         }
 
         int[] arr = new int[size];
+        int sum = 0;
 
         for(int i = 0; i < arr.length; i++) {
             System.out.print("Enter element: ");
             arr[i] = sc.nextInt();
+            sum += arr[i];
         }
 
-        int largest = arr[0];
+        double average = (double)sum / arr.length;
 
-        for(int i = 1; i < arr.length; i++) {
-            if(arr[i] > largest) {
-                largest = arr[i];
-            }
-        }
-
-        System.out.println("Largest number = " + largest);
+        System.out.println("Sum = " + sum);
+        System.out.println("Average = " + average);
 
         sc.close();
     }
